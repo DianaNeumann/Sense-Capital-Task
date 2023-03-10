@@ -1,5 +1,3 @@
-using System;
-
-namespace Presentation.Models.Games;
+namespace Presentation.WebApi.Models.Games;
 
 public record CreateGameModel(Guid PlayerOneId, Guid PlayerTwoId);
