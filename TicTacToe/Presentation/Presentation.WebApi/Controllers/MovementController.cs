@@ -4,14 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 using Presentation.Models.Movements;
 using static Application.Contracts.Movements.MakeMove;
 
-namespace Presentation.Controllers;
+namespace Presentation.WebApi.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
 public class MovementController : ControllerBase
 {
     private readonly IMediator _mediator;
-
     
     public MovementController(IMediator mediator)
     {

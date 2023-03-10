@@ -1,3 +1,3 @@
-namespace Presentation.Models.Players;
+namespace Presentation.WebApi.Models.Players;
 
 public record CreatePlayerModel(string Name);
