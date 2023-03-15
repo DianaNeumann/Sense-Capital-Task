@@ -1,6 +1,7 @@
 namespace Presentation.Features.Events.Models;
 
-public record CreateEventModel(
+public record UpdateEventModel(
+    Guid Id,
     string Name,
     DateTime Start,
     DateTime End,

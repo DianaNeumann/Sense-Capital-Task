@@ -8,15 +8,13 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="FluentValidation" Version="11.5.1" />
+        <PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2" />
         <PackageReference Include="MediatR" Version="11.1.0" />
         <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="6.0.11" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.11" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Features\Events\UpdateEvent" />
     </ItemGroup>
 
 </Project>

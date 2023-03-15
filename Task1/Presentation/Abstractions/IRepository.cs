@@ -6,4 +6,5 @@ public interface IRepository<T>
     void Delete(T entity);
     
     IReadOnlyCollection<T> GetAll();
+    T? FindById(Guid id);
 }

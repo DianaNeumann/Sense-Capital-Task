@@ -1,7 +1,7 @@
 using Presentation.Abstractions;
 using Presentation.Features.Spaces;
 
-namespace Presentation.DAL;
+namespace Presentation.Repositories;
 
 public class SpaceRepository : IRepository<Space>
 {
@@ -16,8 +16,6 @@ public class SpaceRepository : IRepository<Space>
             new Space(Guid.Parse("7eb5a8cb-1645-44a5-8d18-e483fe1c17ba")),
         };
     }
-
-    public IReadOnlyCollection<Space> GetAll() => _spaces;
     
     public void Add(Space entity)
     {
@@ -28,4 +26,10 @@ public class SpaceRepository : IRepository<Space>
     {
         _spaces.Remove(entity);
     }
+    
+    public IReadOnlyCollection<Space> GetAll() => _spaces;
+
+    public Space? FindById(Guid id) => _spaces.FirstOrDefault(e => e.Id.Equals(id));
+
+    
 }

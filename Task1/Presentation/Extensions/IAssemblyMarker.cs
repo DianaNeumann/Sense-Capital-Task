@@ -1,3 +1,3 @@
-namespace Infrastructure.DataAccess;
+namespace Presentation.Extensions;
 
 internal interface IAssemblyMarker { }

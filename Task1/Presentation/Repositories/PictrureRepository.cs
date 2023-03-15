@@ -1,7 +1,7 @@
 using Presentation.Abstractions;
 using Presentation.Features.Pictures;
 
-namespace Presentation.DAL;
+namespace Presentation.Repositories;
 
 public class PictureRepository : IRepository<Picture>
 {
@@ -16,8 +16,6 @@ public class PictureRepository : IRepository<Picture>
             new Picture(Guid.Parse("6b1c8af5-f99e-4a90-84d9-5e73039467b9"), "/img/3.png"),
         };
     }
-
-    public IReadOnlyCollection<Picture> GetAll() => _pictures;
     
     public void Add(Picture entity)
     {
@@ -28,4 +26,9 @@ public class PictureRepository : IRepository<Picture>
     {
         _pictures.Remove(entity);
     }
+    
+    public IReadOnlyCollection<Picture> GetAll() => _pictures;
+    
+    public Picture? FindById(Guid id) => _pictures.FirstOrDefault(e => e.Id.Equals(id));
+
 }

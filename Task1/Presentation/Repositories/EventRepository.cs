@@ -1,8 +1,7 @@
 using Presentation.Abstractions;
-using Presentation.Features;
 using Presentation.Features.Events;
 
-namespace Presentation.DAL;
+namespace Presentation.Repositories;
 
 public class EventRepository : IRepository<Event>
 {
@@ -13,8 +12,6 @@ public class EventRepository : IRepository<Event>
         _events = new List<Event>();
     }
 
-    public IReadOnlyCollection<Event> GetAll() => _events;
-    
     public void Add(Event entity)
     {
         _events.Add(entity);
@@ -25,4 +22,8 @@ public class EventRepository : IRepository<Event>
     {
         _events.Remove(entity);
     }
+    
+    public IReadOnlyCollection<Event> GetAll() => _events;
+    public Event? FindById(Guid id) => _events.First(e => e.Id.Equals(id));
+    
 }
