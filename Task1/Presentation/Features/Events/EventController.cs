@@ -18,7 +18,12 @@ public class EventController : ControllerBase
     
     public CancellationToken CancellationToken => HttpContext.RequestAborted;
 
-    
+    /// <summary>
+    ///  Creates a new event
+    /// </summary>
+    /// <param name="model"></param>
+    /// <param name="validator"></param>
+    /// <returns>Returns result event</returns>
     [HttpPost("CreateEvent")]
     public async Task<ActionResult<Event>> CreateEventAsync(
         [FromBody] CreateEventModel model, 
@@ -43,6 +48,11 @@ public class EventController : ControllerBase
         return Ok(response.Event);
     }
     
+    /// <summary>
+    ///  Delete event by ID
+    /// </summary>
+    /// <param name="model"></param>
+    /// <returns>Returns deleted event</returns>
     [HttpDelete("DeleteEvent")]
     public async Task<ActionResult<Event>> DeleteEventAsync([FromBody] DeleteEventModel model)
     {
@@ -52,6 +62,12 @@ public class EventController : ControllerBase
         return Ok(response.Event);
     }
     
+    /// <summary>
+    ///  Update event by ID
+    /// </summary>
+    /// <param name="model"></param>
+    /// <param name="validator"></param>
+    /// <returns>Кeturns the object that was just deleted</returns>
     [HttpPatch("UpdateEvent")]
     public async Task<ActionResult<Event>> CreateEventAsync(
         [FromBody] UpdateEventModel model, 
@@ -78,6 +94,10 @@ public class EventController : ControllerBase
         return Ok(response.Event);
     }
     
+    /// <summary>
+    /// Getting events
+    /// </summary>
+    /// <returns>Return all event</returns>
     [HttpGet("GetAllEvents")]
     public async Task<ActionResult<Event>> GetAllEventsAsync()
     {
